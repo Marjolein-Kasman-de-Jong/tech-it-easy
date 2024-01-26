@@ -1,12 +1,12 @@
 // Calculates the number of tvs to be sold
 
-import { calculateNumberOfPurchasedTvs } from "./calculate-number-of-purchased-tvs.js" 
-import { calculateNumberOfSoldTvs } from "./calculate-number-of-sold-tvs.js";
+import  calculateNumberOfPurchasedTvs  from "./calculate-number-of-purchased-tvs.js" 
+import  calculateNumberOfSoldTvs  from "./calculate-number-of-sold-tvs.js";
 
-export function calculateNumberOfTvsToBeSold() {
-    const numberOfPurchasedTvs = calculateNumberOfPurchasedTvs()
-    const numberOfSoldTvs = calculateNumberOfSoldTvs()
+function calculateNumberOfTvsToBeSold(inventory) {
+    const numberOfPurchasedTvs = calculateNumberOfPurchasedTvs(inventory)
+    const numberOfSoldTvs = calculateNumberOfSoldTvs(inventory)
     return numberOfPurchasedTvs - numberOfSoldTvs
 }
 
-console.log(calculateNumberOfTvsToBeSold())
+export default calculateNumberOfTvsToBeSold
