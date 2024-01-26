@@ -1,0 +1,37 @@
+/* Sales overview */
+
+.sales-overview-items {
+    display: flex;
+}
+
+.sales-overview-item {
+    border: 3px solid;
+    width: 10%;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Number of sold tvs */
+
+.number-of-sold-tvs {
+    color: green;
+    border-color: green;
+    background-color: lightgreen;
+}
+
+.number-of-purchased-tvs {
+    margin: 0 50px;
+    color: blue;
+    border-color: blue;
+    background-color: lightblue;
+}
+
+.number-of-tvs-to-be-sold {
+    color: red;
+    border-color: red;
+    background-color: lightpink;
+}
