@@ -10,12 +10,11 @@ import createScreenSizeString from './helpers/create-screen-size-string.js';
 import checkIcon from './assets/check.png';
 import minIcon from './assets/minus.png';
 import pickIcon from './helpers/pick-icon.js';
+import sortByNumberSold from './helpers/sort-by-number-sold.js';
+import sortByPrice from './helpers/sort-by-price.js';
+import sortByRefreshRate from './helpers/sort-by-refresh-rate.js';
 
 function App() {
-
-  function handleClick(e) {
-    console.log(e.target.textContent);
-  }
 
   return (
     <>
@@ -73,9 +72,9 @@ function App() {
         <section className="all-tvs">
           <h2>Alle tvs</h2>
           <div className='buttons'>
-            <button type='button' onClick={handleClick}>Meest verkocht eerst</button>
-            <button type='button' onClick={handleClick}>Goedkoopste eerst</button>
-            <button type='button' onClick={handleClick}>Meest geschikt voor sport eerst</button>
+            <button type='button' onClick={() => sortByNumberSold(inventory)}>Meest verkocht eerst</button>
+            <button type='button' onClick={() => sortByPrice(inventory)}>Goedkoopste eerst</button>
+            <button type='button' onClick={() => sortByRefreshRate(inventory)}>Meest geschikt voor sport eerst</button>
           </div>
           <div className="all-tvs-container">
             <ul className='all-tvs-list'>
