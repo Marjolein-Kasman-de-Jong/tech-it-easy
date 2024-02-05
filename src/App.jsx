@@ -9,11 +9,12 @@ import createPriceString from './helpers/create-price-string.js';
 import createScreenSizeString from './helpers/create-screen-size-string.js';
 import checkIcon from './assets/check.png';
 import minIcon from './assets/minus.png';
+import pickIcon from './helpers/pick-icon.js';
 
 function App() {
 
   function handleClick(e) {
-    console.log(e.target.textContent);  
+    console.log(e.target.textContent);
   }
 
   return (
@@ -51,16 +52,16 @@ function App() {
               <p>{createScreenSizeString(bestSellingTv)}</p>
               <div className='features'>
                 <div className='feature-item'>
-                  <img src={checkIcon} alt="Check icon" className='icon'/><p>wifi</p>
+                  <img src={checkIcon} alt="Check icon" className='icon' /><p>wifi</p>
                 </div>
                 <div className='feature-item'>
                   <img src={minIcon} alt="Min icon" className='icon' /><p>speech</p>
                 </div>
                 <div className='feature-item'>
-                  <img src={checkIcon} alt="Check icon" className='icon'/><p>hdr</p>
+                  <img src={checkIcon} alt="Check icon" className='icon' /><p>hdr</p>
                 </div>
                 <div className='feature-item'>
-                  <img src={checkIcon} alt="Check icon" className='icon'/><p>bluetooth</p>
+                  <img src={checkIcon} alt="Check icon" className='icon' /><p>bluetooth</p>
                 </div>
                 <div className='feature-item'>
                   <img src={minIcon} alt="Min icon" className='icon' /><p>ambilight</p>
@@ -69,10 +70,42 @@ function App() {
             </div>
           </article>
         </section>
-        <section className='buttons'>
-          <button type='button' onClick={handleClick}>Meest verkocht eerst</button>
-          <button type='button' onClick={handleClick}>Goedkoopste eerst</button>
-          <button type='button' onClick={handleClick}>Meest geschikt voor sport eerst</button>
+        <section className="all-tvs">
+          <h2>Alle tvs</h2>
+          <div className='buttons'>
+            <button type='button' onClick={handleClick}>Meest verkocht eerst</button>
+            <button type='button' onClick={handleClick}>Goedkoopste eerst</button>
+            <button type='button' onClick={handleClick}>Meest geschikt voor sport eerst</button>
+          </div>
+          <div className="all-tvs-container">
+            <ul className='all-tvs-list'>
+              {inventory.map(tv => {
+                return (
+                  <li key={tv.type}>
+                    <article className='best-sold-tv-item'>
+                      <span>
+                        <img src={tv.sourceImg} alt={createNameString(tv)} />
+                      </span>
+                      <div>
+                        <h3 className='best-sold-tv-heading'>{createNameString(tv)}</h3>
+                        <p>{createPriceString(tv)}</p>
+                        <p>{createScreenSizeString(tv)}</p>
+                        <div className='features'>
+                          {tv.options.map(option => {
+                            return (
+                              <div className='feature-item'>
+                                <img src={pickIcon(tv, option.name, checkIcon, minIcon)} alt="Check icon" className='icon' /><p>{option.name.toLowerCase()}</p>
+                              </div>
+                            )
+                          })}
+                        </div>
+                      </div>
+                    </article>
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
         </section>
       </main>
     </>

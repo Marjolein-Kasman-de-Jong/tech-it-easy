@@ -48,7 +48,6 @@ body {
     border: 3px dashed grey;
     border-radius: 8px;
     background-color: lightgrey;
-    max-width: fit-content;
     padding: 32px;
     display: flex;
     align-items: center;
@@ -88,10 +87,19 @@ body {
     width: 20px;
 }
 
-/* Buttons */
+/* All tvs */
 
 .buttons {
     padding: 20px 0;
     display: flex;
     gap: 12px;
+}
+
+.all-tvs-list {
+    padding-left: 0;
+    list-style: none;
+}
+
+.all-tvs-list li {
+    margin: 24px 0;
 }
