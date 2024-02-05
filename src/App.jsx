@@ -13,6 +13,9 @@ import pickIcon from './helpers/pick-icon.js';
 import sortByNumberSold from './helpers/sort-by-number-sold.js';
 import sortByPrice from './helpers/sort-by-price.js';
 import sortByRefreshRate from './helpers/sort-by-refresh-rate.js';
+import sortByScreenSize from './helpers/sort-by-screen-size.js';
+import outOfStockImage from './assets/out-of-stock.png';
+
 
 function App() {
 
@@ -75,6 +78,7 @@ function App() {
             <button type='button' onClick={() => sortByNumberSold(inventory)}>Meest verkocht eerst</button>
             <button type='button' onClick={() => sortByPrice(inventory)}>Goedkoopste eerst</button>
             <button type='button' onClick={() => sortByRefreshRate(inventory)}>Meest geschikt voor sport eerst</button>
+            <button type='button' onClick={() => sortByScreenSize(inventory)}>Grootste schermgroottes eerst</button>
           </div>
           <div className="all-tvs-container">
             <ul className='all-tvs-list'>
@@ -83,7 +87,7 @@ function App() {
                   <li key={tv.type}>
                     <article className='best-sold-tv-item'>
                       <span>
-                        <img src={tv.sourceImg} alt={createNameString(tv)} />
+                        <img src={tv.originalStock - tv.sold <= 0 ? outOfStockImage : tv.sourceImg} alt={createNameString(tv)} />
                       </span>
                       <div>
                         <h3 className='best-sold-tv-heading'>{createNameString(tv)}</h3>
