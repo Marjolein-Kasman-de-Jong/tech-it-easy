@@ -2,7 +2,7 @@
 
 function pickIcon(tv, feature, checkIcon, minIcon) {
     if (tv.options.find(option => {
-        return option.name === feature && option.applicable === true;
+        return option.name === feature && option.applicable;
     })) {
         return checkIcon;
     } else {
