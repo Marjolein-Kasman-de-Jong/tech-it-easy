@@ -1,0 +1,105 @@
+body {
+    padding: 0 20px;
+}
+
+/* Sales overview */
+
+.sales-overview-items {
+    display: flex;
+    gap: 32px;
+}
+
+.sales-overview-item {
+    border: 3px solid;
+    border-radius: 8px;
+    width: 10%;
+    padding: 20px;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Number of sold tvs */
+
+.number-of-sold-tvs {
+    color: green;
+    border-color: green;
+    background-color: lightgreen;
+}
+
+.number-of-purchased-tvs {
+    color: blue;
+    border-color: blue;
+    background-color: lightblue;
+}
+
+.number-of-tvs-to-be-sold {
+    color: red;
+    border-color: red;
+    background-color: lightpink;
+}
+
+/* Best sold tv */
+
+.best-sold-tv-item {
+    border: 3px dashed grey;
+    border-radius: 8px;
+    background-color: lightgrey;
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.best-sold-tv-item img {
+    width: 100%;
+    max-width: 250px;
+}
+
+.best-sold-tv-item div {
+    font-size: 1.3rem;
+}
+
+.best-sold-tv-heading {
+    margin: 0;
+}
+
+.features {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.feature-item p {
+    margin: 0;
+}
+
+.feature-item .icon {
+    width: 20px;
+}
+
+/* All tvs */
+
+.buttons {
+    padding: 20px 0;
+    display: flex;
+    gap: 12px;
+}
+
+.all-tvs-list {
+    padding-left: 0;
+    list-style: none;
+}
+
+.all-tvs-list li {
+    margin: 24px 0;
+}
